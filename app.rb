@@ -3,6 +3,7 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/flash'
 require './models'
+require './routes/movies'
 
 enable :sessions
 set :session_secret, 'dsafqdf13ef13edafsad242'
