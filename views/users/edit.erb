@@ -1,0 +1,20 @@
+<h1>Edit User</h1>
+<form action="/users/<%= @user.id %>" method="POST">
+    <input type="hidden" name="_method" value="PATCH" />
+    <label>First Name</label>
+    <input type="text" name="fname" value="<%= @user.fname %>">
+    <br />
+
+    <label>Last Name</label>
+    <input type="text" name="lname" value="<%= @user.lname %>">
+    <br />
+
+    <label>Email</label>
+    <input type="email" name="email" value="<%= @user.email %>">
+
+    <br />
+
+    <input type="submit">
+</form>
+
+<a href="/users">Users Index</a>

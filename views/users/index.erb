@@ -1,0 +1,34 @@
+<h1>Users</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th colspan="3"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @users.each do |user| %>
+            <tr>
+                <td><%= user.fname %></td>
+                <td><%= user.lname %></td>
+                <td><%= user.email %></td>
+                <td><a href="/users/<%= user.id %>">Show</a></td>
+                <td><a href="/users/<%= user.id %>/edit">Edit</a></td>
+                <td>
+                    <form action="/users/<%= user.id %>" method="POST">
+                        <input type="hidden" name="_method" value="DELETE" />
+                        <input type="submit" value="Delete" />
+                    </form>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<br>
+
+<a href="/users/new">Create User</a>
