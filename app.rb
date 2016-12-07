@@ -68,6 +68,7 @@ patch '/users/:id' do
   @user.fname = params[:fname]
   @user.lname = params[:lname]
   @user.email = params[:email]
+  @user.save
 
   redirect '/users/' + params[:id]
 end

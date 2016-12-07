@@ -16,8 +16,8 @@
                 <td><%= movie.title %></td>
                 <td><%= movie.year %></td>
                 <td><%= movie.rating %></td>
-                <td><a href="/users/<%= user.id %>">Show</a></td>
-                <td><a href="/users/<%= user.id %>/edit">Edit</a></td>
+                <td><a href="/movies/<%= movie.id %>">Show</a></td>
+                <td><a href="/movies/<%= movie.id %>/edit">Edit</a></td>
                 <td>
                     <form action="/movies/<%= movie.id %>" method="POST">
                         <input type="hidden" name="_method" value="DELETE" />

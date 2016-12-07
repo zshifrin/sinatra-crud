@@ -9,7 +9,7 @@ end
 #
 # Show form for creating new movie
 #
-get 'movies/new' do
+get '/movies/new' do
 	erb :"movies/new"
 end
 
@@ -24,7 +24,7 @@ end
 #
 # Show form for editing movie
 #
-get 'movies/:id/edit' do
+get '/movies/:id/edit' do
 	@movie = Movie.find(params[:id])
 	erb :"movies/edit"
 end
@@ -46,10 +46,10 @@ end
 # Update Movie
 #
 patch '/movies/:id' do
-	@movie =Movie.find(params[:id])
+	@movie = Movie.find(params[:id])
 	@movie.title = params[:title]
 	@movie.year = params[:year]
-
+	@movie.save
 	redirect '/movies/' + params[:id]
 end
 
